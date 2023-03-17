@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  font-family: cursive;
+}
+
+.product-item {
+  display: flex;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.product-image {
+  width: 30%;
+  /* height: 17%; */
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.product-info {
+  margin: 6% 6%;
+}
+
+.low-price {
+  color: green;
+  font-weight: bold;
+}
+.red-price {
+  font-size: 20px;
+}
+
+.in-stock {
+  color: green;
+}
+
+.out-stock {
+  color: red;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

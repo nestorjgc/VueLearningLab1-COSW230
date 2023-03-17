@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>COSW 230 - Lab 1</title>
+    <style>
+      img {
+        width: 150px;
+      }
+      .oos {
+        text-decoration: line-through;
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="product-item">
+        <img :src="product.image" :alt="product.title" class="product-image" />
+        <div class="product-info">
+          <h2>{{ product.title }}</h2>
+          <p v-html="product.description"></p>
+          <p :class="'low-price'">Price: {{ formatPrice }}</p>
+          <p :class="'in-stock'" v-if="inStock === 'In stock'">
+            Availability: {{inStock}}
+          </p>
+          <p :class="'out-stock'" v-else="inStock === 'Out of Stock'">
+            Availability: {{inStock}}
+          </p>
+          <button v-if="inStock === 'In stock'">Add to order</button>
+          <button v-else disabled>
+            {{inStock}}
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3.2.47/dist/vue.global.js"></script>
+    <script src="init.js"></script>
+  </body>
+</html>
